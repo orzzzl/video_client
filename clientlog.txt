@@ -1,0 +1,31 @@
+2017-06-21 12:26:01,823 - root - INFO - upload worker start working
+2017-06-21 12:26:01,860 - root - INFO - cleaner starts working.
+2017-06-21 12:26:01,871 - root - INFO - End Session Checker starts working.
+2017-06-21 12:26:03,860 - root - INFO - gateway_services 0 is on
+2017-06-21 12:26:03,860 - root - INFO - size 0
+2017-06-21 12:26:03,861 - root - INFO - gateway_services 1 is on
+2017-06-21 12:26:03,861 - root - INFO - size 0
+2017-06-21 12:26:03,889 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 192.168.0.18
+2017-06-21 12:26:03,974 - urllib3.connectionpool - DEBUG - http://192.168.0.18:8999 "POST /createsession HTTP/1.1" 200 19
+2017-06-21 12:26:03,982 - root - INFO - start recording file: ./data/2017-06-21@12@26@03.974844@1.avi
+2017-06-21 12:26:03,988 - root - INFO - start recording file: ./data/2017-06-21@12@26@03.975064@0.avi
+2017-06-21 12:26:07,519 - root - INFO - gateway_services 0 is off
+2017-06-21 12:26:07,525 - root - INFO - gateway_services 1 is off
+2017-06-21 12:26:08,002 - root - INFO - end recording file: ./data/2017-06-21@12@26@03.975064@0.avi
+2017-06-21 12:26:08,003 - root - INFO - start writing file to db: ./data/2017-06-21@12@26@03.975064@0.avi
+2017-06-21 12:26:08,008 - root - INFO - end recording file: ./data/2017-06-21@12@26@03.974844@1.avi
+2017-06-21 12:26:08,025 - root - INFO - start writing file to db: ./data/2017-06-21@12@26@03.974844@1.avi
+2017-06-21 12:26:08,143 - root - INFO - end writing file: ./data/2017-06-21@12@26@03.975064@0.avi
+2017-06-21 12:26:08,149 - root - INFO - uploading: ./data/2017-06-21@12@26@03.975064@0.avi
+2017-06-21 12:26:08,171 - root - INFO - uploading: ./data/2017-06-21@12@26@03.974844@1.avi
+2017-06-21 12:26:08,204 - root - INFO - end writing file: ./data/2017-06-21@12@26@03.974844@1.avi
+2017-06-21 12:26:08,206 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 192.168.0.18
+2017-06-21 12:26:08,226 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 192.168.0.18
+2017-06-21 12:26:10,560 - urllib3.connectionpool - DEBUG - http://192.168.0.18:8999 "POST /upload HTTP/1.1" 200 18
+2017-06-21 12:26:10,576 - root - INFO - end uploading ./data/2017-06-21@12@26@03.974844@1.avi
+2017-06-21 12:26:10,625 - urllib3.connectionpool - DEBUG - http://192.168.0.18:8999 "POST /upload HTTP/1.1" 200 18
+2017-06-21 12:26:10,636 - root - INFO - end uploading ./data/2017-06-21@12@26@03.975064@0.avi
+2017-06-21 12:26:10,782 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 192.168.0.18
+2017-06-21 12:26:11,233 - urllib3.connectionpool - DEBUG - http://192.168.0.18:8999 "POST /endsession HTTP/1.1" 200 0
+2017-06-21 17:21:03,135 - root - INFO - gateway_services 0 is off
+2017-06-21 17:21:03,135 - root - INFO - gateway_services 1 is off
