@@ -6,14 +6,14 @@ class VideoWriter(DatabaseWriter):
         DatabaseWriter.__init__(self)
         self._table = VIDEO_TABLE_NAME
 
-    def write_video_to_db(self, datetime_obj, file_path, session_id, camera_idx):
+    def write_task_to_db(self, datetime_obj, file_path, session_id, camera_idx, task_type):
         t = datetime_obj.strftime('%Y-%m-%d %H:%M:%S')
-        statement = 'INSERT INTO %s (task_time, file_path, session_id, camera_idx) VALUES ("%s", "%s", %s, %s)' % \
-                    (self._table, t, file_path, session_id, camera_idx)
+        statement = 'INSERT INTO %s (task_time, file_path, session_id, camera_idx, task_type) VALUES ("%s", "%s", %s, %s, %s)' % \
+                    (self._table, t, file_path, session_id, camera_idx, task_type)
         self.execute(statement)
 
-    def get_all_tasks(self, is_complete):
-        statement = 'SELECT * FROM %s where complete = %s ORDER BY task_time' % (self._table, is_complete)
+    def get_all_tasks(self, is_complete, task_type):
+        statement = 'SELECT * FROM %s where complete = %s AND task_type = %s ORDER BY task_time' % (self._table, is_complete, task_type)
         c = self.make_connection()
         with c.cursor() as cursor:
             cursor.execute(statement)
@@ -30,8 +30,8 @@ class VideoWriter(DatabaseWriter):
         c.close()
         return res
 
-    def set_complete(self, file_path):
-        statement = 'UPDATE %s SET complete = 1 where file_path = "%s"' % (self._table, file_path)
+    def set_complete(self, file_path, task_type):
+        statement = 'UPDATE %s SET complete = 1 where file_path = "%s" AND task_type = %s' % (self._table, file_path, task_type)
         self.execute(statement)
 
     def clear_finished_task(self, f):

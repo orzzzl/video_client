@@ -10,7 +10,6 @@ def get_address():
 
 # Video Recording Preference
 VIDEO_FORMAT = '.avi'
-FRAME_RATE = 20.0
 VIDEO_DIMENTION = (640, 480)
 RECORDING_INTERVAL = 5
 

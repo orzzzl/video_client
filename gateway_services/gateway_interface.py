@@ -14,7 +14,9 @@ def stop_gateways():
     for g in gateways:
         g.set_off()
 
-def start_gateways():
+def start_gateways(session_id):
     for g in gateways:
+        g.set_session_id(session_id)
         g.set_on()
+
 

@@ -13,13 +13,13 @@ class VideoUploader(RequestMaker):
         logging.info('uploading: %s' % f)
         RequestMaker.upload(f, s, c)
         logging.info('end uploading %s' % f)
-        self._video_writer.set_complete(f)
+        self._video_writer.set_complete(f, 1)
 
     def work(self):
         logging.info('upload worker start working')
         while True:
             tasks = []
-            to_dos = self._video_writer.get_all_tasks(0)
+            to_dos = self._video_writer.get_all_tasks(0, 1)
             for entity in to_dos:
                 t = Thread(target=self.process_file, args=(entity['file_path'], entity['session_id'], entity['camera_idx']))
                 tasks.append(t)
