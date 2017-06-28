@@ -34,12 +34,10 @@ class Gateway:
             })
 
     def set_on(self):
-        logging.info('size ' + str(self._queue0.qsize()))
         logging.info('gateway_services ' + str(self.secret) + ' is on')
         self.on = True
 
     def set_off(self):
-        logging.info('size ' + str(self._queue0.qsize()))
         logging.info('gateway_services ' + str(self.secret) + ' is off')
         self.on = False
 
@@ -51,7 +49,6 @@ class Gateway:
             return not self._queue0.empty()
         other_idx = 1 - channel_idx
         if self._idxs[channel_idx] >= self._idxs[other_idx]:
-            logging.info("called" + str(self._queue0.qsize()))
             return not self._queue0.empty()
         else:
             return not self._queue1.empty()

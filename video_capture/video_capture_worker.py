@@ -13,7 +13,7 @@ class VideoCaptureWorker:
     def __init__(self, gateway):
         self._vw = VideoWriter()
         self.gateway = gateway
-        self.fourcc = cv2.VideoWriter_fourcc(*'H264')
+        self.fourcc = cv2.VideoWriter_fourcc(*'VP80')
         self.idx = gateway.secret
         self.is_recording_on = False
         self.session_id = -1
@@ -72,12 +72,19 @@ class VideoCaptureWorker:
         if total_secs == 0:
             return
         frame_rate = total_frames * 1.0 / total_secs
-        out = cv2.VideoWriter(file_name, self.fourcc, frame_rate, VIDEO_DIMENTION)
+        logging.info(self.session_id)
+        logging.info(frame_rate)
+        logging.info(file_name)
+        logging.info(len(frame_buffer))
+        for i in range(3):
+            logging.info(str(i) + "  " + str(frame_buffer[i]['time']) + "   " + str(frame_buffer[i]["session_id"]))
+            logging.info(str(-i) + "  " + str(frame_buffer[-i]['time']) + "   " + str(frame_buffer[-i]["session_id"]))
+        out = cv2.VideoWriter(file_name, self.fourcc, float(frame_rate), VIDEO_DIMENTION)
         for frame in frame_buffer:
             out.write(frame['frame'])
         out.release()
         self._vw.set_complete(file_name, 0)
-        self.write_to_db(file_name, session_id)
+       #self.write_to_db(file_name, session_id)
 
 
 

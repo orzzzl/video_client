@@ -9,7 +9,7 @@ def get_address():
 
 
 # Video Recording Preference
-VIDEO_FORMAT = '.avi'
+VIDEO_FORMAT = '.webm'
 VIDEO_DIMENTION = (640, 480)
 RECORDING_INTERVAL = 5
 

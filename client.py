@@ -56,6 +56,7 @@ class client:
 
             if line == 'on':
                 self.session_id = self._vu.create_session(self.start_time)
+                print('get session id', self.session_id)
                 self._vi.set_sission_id(self.session_id)
                 gateway_interface.start_gateways(self.session_id)
                 self.start_time = datetime.now()
